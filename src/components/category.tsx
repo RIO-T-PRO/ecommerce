@@ -1,8 +1,8 @@
 import Link from "next/link";
-import React from "react";
-import CategoryCard from "./category-card";
-import CardComputers from "./card-computers";
-import ManClothes from "./man-clothes";
+import ComputerSection from "./computers-section";
+import MobilesSection from "./mobiles-section";
+import ManClothesSection from "./man-clothes-section";
+import WomenClothesSection from "./women-clothes-section";
 
 const Category = () => {
   return (
@@ -20,45 +20,10 @@ const Category = () => {
           <Link href="/">Sports</Link>
         </ul>
       </div>
-      <div className="px-4 grid grid-cols-3 gap-5 ">
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-      </div>
-
-      <div className="my-20">
-        <h1 className="font-bold text-5xl text-center text-gray-800">
-          Computers & Laptop
-        </h1>
-      </div>
-
-      <div className="p-4">
-        <div className="grid grid-cols-3 shadow border border-gray-300 shadow">
-          <CardComputers />
-          <CardComputers />
-          <CardComputers />
-        </div>
-      </div>
-
-      <div className="my-20">
-        <h1 className="font-bold text-5xl text-center text-gray-800">
-          Man's clothes
-        </h1>
-      </div>
-
-      <div className="p-4">
-        <ManClothes />
-      </div>
-
-      <div className="my-20">
-        <h1 className="font-bold text-5xl text-center text-gray-800">
-          woman's clothes
-        </h1>
-      </div>
-
-      <div className="p-4">
-        <ManClothes />
-      </div>
+      <MobilesSection />
+      <ComputerSection />
+      <ManClothesSection />
+      <WomenClothesSection />
     </div>
   );
 };

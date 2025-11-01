@@ -1,6 +1,6 @@
 import React from "react";
 
-const ManClothes = () => {
+const Clothes = () => {
   return (
     <div className="flex items-center justify-between shadow border border-gray-300 pl-6 pt-8">
       <div className="flex flex-col space-y-3 ">
@@ -26,4 +26,4 @@ const ManClothes = () => {
   );
 };
 
-export default ManClothes;
+export default Clothes;

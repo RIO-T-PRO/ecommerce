@@ -10,11 +10,11 @@ const Header = () => {
       <nav className="flex">
         <FaBars className="hidden" />
         <ul className="flex gap-4 text-xl font-semibold">
-          <Link href="">Home</Link>
-          <Link href="">Home</Link>
-          <Link href="">Home</Link>
-          <Link href="">Home</Link>
-          <Link href="">Home</Link>
+          <Link href="/">Home</Link>
+          <Link href="/computers">Computers</Link>
+          <Link href="/mans-clothes">Mans Clothes</Link>
+          <Link href="/women-clothes">Womans Clothes</Link>
+          <Link href="/contact">Contact</Link>
         </ul>
       </nav>
 
