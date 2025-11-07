@@ -1,5 +1,6 @@
 import React from "react";
 import CardComputers from "./card-computers";
+import { products } from "@/data/product";
 
 const ComputerSection = () => {
   return (
@@ -12,9 +13,9 @@ const ComputerSection = () => {
 
       <div className="p-4">
         <div className="grid grid-cols-3 border border-gray-300 shadow">
-          <CardComputers />
-          <CardComputers />
-          <CardComputers />
+          {products.slice(0, 3).map((product, index) => (
+            <CardComputers product={product} key={index} />
+          ))}
         </div>
       </div>
     </div>

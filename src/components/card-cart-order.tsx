@@ -3,7 +3,7 @@ import { FaArrowCircleRight } from "react-icons/fa";
 
 const CardCartOrder = () => {
   return (
-    <div className="w-100 flex flex-col p-2 shadow border border-gray-200 rounded-2xl gap-2.5">
+    <div className="flex flex-col p-2 shadow border border-gray-200 rounded-2xl gap-2.5">
       <div className="flex flex-col gap-2">
         <h3 className="text-2xl font-bold">Order Summary</h3>
         <div className="flex flex-col gap-1.5">
@@ -22,9 +22,7 @@ const CardCartOrder = () => {
         </div>
       </div>
 
-      <div className="text-gray-300 w-full mx-auto">
-        <hr />
-      </div>
+      <div className="divide-y divide-gray-400 h-0.5"></div>
 
       <div className="flex flex-col gap-2.5">
         <div className="flex justify-between items-center">
