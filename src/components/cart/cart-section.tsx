@@ -7,8 +7,6 @@ import CardCartOrder from "./card-cart-order";
 const CartSection = () => {
   const { cart } = useCart();
 
-  console.dir(cart);
-
   return (
     <div className="flex flex-col space-y-6 p-10 max-w-6xl">
       <h1 className="text-4xl font-semibold">Your Cart</h1>

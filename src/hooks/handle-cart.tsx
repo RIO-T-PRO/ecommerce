@@ -1,11 +1,18 @@
 import { useCart } from "@/contexts/cart-context";
+import { CartItem } from "@/data/cart";
 import { Product } from "@/data/product";
 
 export const handleCart = () => {
   const { cart, setCart } = useCart();
 
+  const updateCart = (newCart: CartItem[]) => {
+    setCart(newCart);
+    localStorage.setItem("cart", JSON.stringify(newCart));
+  };
+
   const handleAddToCart = (product: Product) => {
-    setCart((prev) => [...prev, { ...product, cartQuantity: 1 }]);
+    const newCart = [...cart, { ...product, cartQuantity: 1 }];
+    updateCart(newCart);
   };
 
   const increaseQuanity = (id: number) => {
@@ -14,11 +21,10 @@ export const handleCart = () => {
       console.error("error finding the product");
       return;
     }
-    setCart((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, cartQuantity: item.cartQuantity + 1 } : item
-      )
+    const newCart = cart.map((item) =>
+      item.id === id ? { ...item, cartQuantity: item.cartQuantity + 1 } : item
     );
+    updateCart(newCart);
   };
 
   const decreasingQuantity = (id: number) => {
@@ -27,15 +33,15 @@ export const handleCart = () => {
       console.error("error finding the product");
       return;
     }
-    setCart((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, cartQuantity: item.cartQuantity - 1 } : item
-      )
+    const newCart = cart.map((item) =>
+      item.id === id ? { ...item, cartQuantity: item.cartQuantity - 1 } : item
     );
+    updateCart(newCart);
   };
 
   const deleteItem = (id: number) => {
-    cart.filter((item) => item.id === id);
+    const newCart = cart.filter((item) => item.id !== id);
+    updateCart(newCart);
   };
 
   return {

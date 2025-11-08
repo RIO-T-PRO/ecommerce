@@ -1,5 +1,5 @@
 import React from "react";
-import CategoryCard from "./category-card";
+import CategoryCard from "../card/category-card";
 import { products } from "@/data/product";
 
 const MobilesSection = () => {

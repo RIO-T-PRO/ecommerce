@@ -1,4 +1,4 @@
-import WomenClothesSection from "@/components/women-clothes-section";
+import WomenClothesSection from "@/components/section-card/women-clothes-section";
 import React from "react";
 
 const Page = () => {
