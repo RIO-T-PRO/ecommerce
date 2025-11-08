@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { Product } from "@/data/product";
-import { getDiscountedPrice } from "./card-computers";
+import { getDiscountedPrice } from "@/utils/functions";
 
 interface CardMobileProps {
   product: Product;

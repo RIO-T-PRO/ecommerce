@@ -1,4 +1,4 @@
-import CartSection from "@/components/cart-section";
+import CartSection from "@/components/cart/cart-section";
 
 const Page = () => {
   return (

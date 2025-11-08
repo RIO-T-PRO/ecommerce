@@ -4,18 +4,14 @@ import React, { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { Product } from "@/data/product";
 import { handleCart } from "@/hooks/handle-cart";
+import { MdDelete } from "react-icons/md";
+import { getDiscountedPrice } from "@/utils/functions";
 
 interface CardComputerProps {
   product: Product;
 }
 
-export const getDiscountedPrice = (price: number, discount?: number) => {
-  return discount ? price - (price * discount) / 100 : price;
-};
-
 const CardComputers: React.FC<CardComputerProps> = ({ product }) => {
-  // const { cart, setCart } = useCart();
-
   const {
     cart,
     handleAddToCart,
@@ -24,26 +20,9 @@ const CardComputers: React.FC<CardComputerProps> = ({ product }) => {
     deleteItem,
   } = handleCart();
 
-  // const [isIntCart, setIsInCart] = useState<boolean>(false);
-
   const isInCart = cart.some((item) => item.id === product.id);
 
   const cartItem = cart.find((item) => item.id === product.id);
-
-  // const handleAddToCart = (product: Product) => {
-  //   setCart((prev) => [...prev, { ...product, cartQuantity: 1 }]);
-  // };
-
-  const [quantity, setQuantity] = useState<number>(1);
-
-  // const toggleCart = () => {
-  //   setIsInCart((prev) => !prev);
-  //   if (isIntCart) setQuantity(1);
-  // };
-
-  // const increasing = () => setQuantity((prev) => prev + 1);
-  const decreasing = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
-  const totalPrice = product.price * quantity;
 
   const discountedPrice = getDiscountedPrice(product.price, product.discount);
 
@@ -70,21 +49,21 @@ const CardComputers: React.FC<CardComputerProps> = ({ product }) => {
             className="p-1 rounded-md text-white bg-rose-400"
             onClick={() => decreasingQuantity(product.id)}
           >
-            <FaMinus className="text-2xl" />
+            <FaMinus className="text-xl" />
           </button>
           <span>{cartItem?.cartQuantity}</span>
           <button
             className="p-1 rounded-md text-white bg-rose-400"
             onClick={() => increaseQuanity(product.id)}
           >
-            <FaPlus className="text-2xl" />
+            <FaPlus className="text-xl" />
           </button>
 
           <button
-            className="p-1 rounded-md text-white font-semibold bg-rose-400"
+            className="p-1 text-xl text-red-400 "
             onClick={() => deleteItem(product.id)}
           >
-            Go Back
+            <MdDelete />
           </button>
         </div>
       ) : (

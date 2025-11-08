@@ -1,5 +1,6 @@
 import { CartItem } from "@/data/cart";
 import { handleCart } from "@/hooks/handle-cart";
+import { getDiscountedPrice } from "@/utils/functions";
 import { FaMinus, FaPlus, FaTrash } from "react-icons/fa6";
 
 type Props = {
@@ -7,7 +8,9 @@ type Props = {
 };
 
 const CardCart = ({ cartItem }: Props) => {
-  const { increaseQuanity } = handleCart();
+  const { increaseQuanity, decreasingQuantity, deleteItem } = handleCart();
+
+  const discountedPrice = getDiscountedPrice(cartItem.price, cartItem.discount);
 
   return (
     <div className="flex flex-col gap-4">
@@ -36,17 +39,27 @@ const CardCart = ({ cartItem }: Props) => {
               </span>
             </div>
 
-            <div className="text-red-500">
+            <button
+              onClick={() => deleteItem(cartItem.id)}
+              className="text-red-500"
+            >
               <FaTrash />
-            </div>
+            </button>
           </div>
 
           <div className="flex justify-between items-center">
-            <span className="text-xl font-semibold">{cartItem.price}</span>
+            <div className="flex gap-4">
+              <span className="text-xl font-semibold">${discountedPrice}</span>
+              {cartItem.discount && (
+                <span className="text-xl line-through text-gray-400">
+                  ${cartItem.price}
+                </span>
+              )}
+            </div>
 
             <button className="flex gap-3 items-center px-3 py-1 rounded-2xl bg-white shadow">
               <span>
-                <FaMinus />
+                <FaMinus onClick={() => decreasingQuantity(cartItem.id)} />
               </span>
               <span>{cartItem.cartQuantity}</span>
               <span onClick={() => increaseQuanity(cartItem.id)}>

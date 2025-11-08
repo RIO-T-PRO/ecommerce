@@ -1,8 +1,8 @@
 import Link from "next/link";
-import ComputerSection from "./computers-section";
-import MobilesSection from "./mobiles-section";
-import ManClothesSection from "./man-clothes-section";
-import WomenClothesSection from "./women-clothes-section";
+import ComputerSection from "../section-card/computers-section";
+import MobilesSection from "../section-card/mobiles-section";
+import ManClothesSection from "../section-card/man-clothes-section";
+import WomenClothesSection from "../section-card/women-clothes-section";
 
 const Category = () => {
   return (

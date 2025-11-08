@@ -1,4 +1,4 @@
-import ManClothesSection from "@/components/man-clothes-section";
+import ManClothesSection from "@/components/section-card/man-clothes-section";
 import React from "react";
 
 const Page = () => {

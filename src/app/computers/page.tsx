@@ -1,4 +1,4 @@
-import ComputerSection from "@/components/computers-section";
+import ComputerSection from "@/components/section-card/computers-section";
 
 const Page = () => {
   return (

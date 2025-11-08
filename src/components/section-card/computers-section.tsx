@@ -1,5 +1,5 @@
 import React from "react";
-import CardComputers from "./card-computers";
+import CardComputers from "../card/card-computers";
 import { products } from "@/data/product";
 
 const ComputerSection = () => {
