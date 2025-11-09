@@ -1,5 +1,6 @@
 import CardComputers from "../card/card-computers";
 import { products } from "@/data/product";
+import Link from "next/link";
 
 const ComputerSection = () => {
   return (
@@ -21,7 +22,13 @@ const ComputerSection = () => {
           "
         >
           {products.slice(0, 3).map((product, index) => (
-            <CardComputers product={product} key={index} />
+            <Link
+              href={`/products/${product.id}`}
+              key={index}
+              className="w-full"
+            >
+              <CardComputers product={product} />
+            </Link>
           ))}
         </div>
       </div>
