@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ComputerSection from "../section-card/computers-section";
 import MobilesSection from "../section-card/mobiles-section";
 import ManClothesSection from "../section-card/man-clothes-section";
@@ -7,19 +6,10 @@ import WomenClothesSection from "../section-card/women-clothes-section";
 const Category = () => {
   return (
     <div>
-      <div className="flex justify-around items-center bg-blue-950 px-7 py-5">
+      <div className="flex justify-around items-center bg-blue-950 px-7 py-5 mb-4">
         <h2 className="font-bold text-2xl text-white">CATEGORY</h2>
-        <ul className="flex space-x-4 font-semibold text-xl">
-          <Link href="/">Man's Fashion</Link>
-          <Link href="/">Women Fashion</Link>
-          <Link href="/">Beauty</Link>
-          <Link href="/">Mobiles</Link>
-          <Link href="/">Computers</Link>
-          <Link href="/">Watchs</Link>
-          <Link href="/">Kitchen</Link>
-          <Link href="/">Sports</Link>
-        </ul>
       </div>
+
       <MobilesSection />
       <ComputerSection />
       <ManClothesSection />

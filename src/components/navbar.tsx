@@ -15,9 +15,10 @@ const Header = () => {
 
   const links = [
     { name: "Home", href: "/" },
+    { name: "Products", href: "/products" },
     { name: "Computers", href: "/computers" },
-    { name: "Mens Clothes", href: "/mens-clothes" },
-    { name: "Womens Clothes", href: "/womens-clothes" },
+    { name: "Mens Clothes", href: "/mans-clothes" },
+    { name: "Womens Clothes", href: "/women-clothes" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -67,7 +68,7 @@ const Header = () => {
                 <Link
                   className={`${
                     isActive(link.href)
-                      ? "text-red-600 font-semibold"
+                      ? "text-rose-600 font-semibold"
                       : "text-gray-700 hover:text-gray-900"
                   } transition-colors duration-200 px-2 py-1`}
                   href={link.href}
@@ -77,7 +78,7 @@ const Header = () => {
                 <span
                   className={`${
                     isActive(link.href)
-                      ? "scale-x-100 bg-red-600"
+                      ? "scale-x-100 bg-rose-600"
                       : "scale-x-0 group-hover:scale-x-100 bg-gray-900"
                   } transition-all duration-300 h-0.5 w-full`}
                 />

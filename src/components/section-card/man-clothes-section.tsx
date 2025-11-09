@@ -1,19 +1,20 @@
-import React from "react";
 import Clothes from "../card/clothes";
 
 const ManClothesSection = () => {
   return (
-    <div>
-      <div className="my-20">
-        <h1 className="font-bold text-5xl text-center text-gray-800">
-          Man's clothes
+    <section className="my-12 md:my-20 px-4 md:px-8">
+      {/* Section Title */}
+      <div className="mb-10 md:mb-16 text-center">
+        <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl text-gray-800">
+          Man's Clothes
         </h1>
       </div>
 
-      <div className="p-4">
+      {/* Clothes Card */}
+      <div className="w-full">
         <Clothes />
       </div>
-    </div>
+    </section>
   );
 };
 
