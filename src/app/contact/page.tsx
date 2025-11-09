@@ -4,9 +4,7 @@ const Page = () => {
   return (
     <div className="flex flex-col max-w-5xl mx-auto space-y-10 my-10 px-6 ">
       {/* Title */}
-      <h2 className="text-3xl sm:text-4xl text-center font-bold text-black">
-        CONTACT US
-      </h2>
+      <h1 className="text-3xl text-center font-bold">CONTACT US</h1>
 
       {/* Form */}
       <div className="flex justify-center items-center">

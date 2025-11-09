@@ -5,10 +5,8 @@ const ComputerSection = () => {
   return (
     <div className="w-full">
       {/* Section Title */}
-      <div className="my-10 md:my-20">
-        <h1 className="font-bold text-3xl md:text-5xl text-center text-gray-800">
-          Computers & Laptop
-        </h1>
+      <div className="my-8">
+        <h1 className="font-bold text-3xl text-center">Computers & Laptop</h1>
       </div>
 
       {/* Product Grid */}

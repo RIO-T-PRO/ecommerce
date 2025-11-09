@@ -55,7 +55,7 @@ export const products: Product[] = [
     image:
       "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80",
     price: 680,
-    quantity: 1,
+    quantity: 4,
     transport: 28,
     category: "Computers",
   },

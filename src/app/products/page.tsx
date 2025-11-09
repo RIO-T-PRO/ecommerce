@@ -15,7 +15,7 @@ const ProductsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4">
-      <h1 className="text-3xl font-bold text-center mb-8">Our Products</h1>
+      <h1 className="text-3xl font-bold text-center mb-4">Our Products</h1>
 
       <div className="flex justify-center items-center gap-4 mb-4">
         {categories.map((category, index) => (
