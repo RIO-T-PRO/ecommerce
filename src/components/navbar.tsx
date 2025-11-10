@@ -89,9 +89,11 @@ const Header = () => {
 
         {/* User, Cart, Hamburger */}
         <div className="flex items-center gap-4 md:gap-6">
-          <button className="p-2 text-gray-700 hover:text-red-600 transition-colors">
-            <FaUser className="text-xl" />
-          </button>
+          <Link href="/login">
+            <button className="p-2 text-gray-700 hover:text-red-600 transition-colors">
+              <FaUser className="text-xl" />
+            </button>
+          </Link>
 
           <Link
             href="/cart"
@@ -163,9 +165,11 @@ const Header = () => {
             {/* User info at bottom */}
             <div className="absolute bottom-4 left-4 right-4 p-4 bg-gray-50 rounded-lg">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
-                  <FaUser className="text-gray-600" />
-                </div>
+                <Link onClick={() => setMobileOpen(false)} href="/login">
+                  <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
+                    <FaUser className="text-gray-600" />
+                  </div>
+                </Link>
                 <div>
                   <p className="text-sm font-medium text-gray-900">
                     Guest User
