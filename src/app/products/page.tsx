@@ -1,17 +1,26 @@
 "use client";
 
 import CategoryCard from "@/components/card/category-card";
-import { products } from "@/data/product";
-import { useState } from "react";
+import { Product, products } from "@/data/product";
+import { ChangeEvent, useState } from "react";
 
 const ProductsPage: React.FC = () => {
   const categories = ["All", ...new Set(products.map((item) => item.category))];
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  const [search, setSearch] = useState<string>("");
 
-  const filteredProducts =
-    selectedCategory === "All"
-      ? products
-      : products.filter((item) => item.category === selectedCategory);
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+
+  const filteredProducts = products.filter((item) => {
+    const matchesCategory =
+      selectedCategory === "All" || item.category === selectedCategory;
+    const matchesSearch = item.title
+      .toLowerCase()
+      .includes(search.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4">
@@ -22,7 +31,7 @@ const ProductsPage: React.FC = () => {
           <button
             onClick={() => setSelectedCategory(category)}
             key={index}
-            className={`rounded-2xl px-4 py-1 border border-blue-950  ${
+            className={`rounded-2xl px-4 py-1 border border-blue-950 ${
               selectedCategory === category
                 ? "bg-blue-950 text-white"
                 : "bg-white text-blue-950"
@@ -33,10 +42,24 @@ const ProductsPage: React.FC = () => {
         ))}
       </div>
 
+      <input
+        type="text"
+        value={search}
+        onChange={handleSearch}
+        placeholder="Search"
+        className="px-4 py-2 border border-zinc-700 w-sm rounded-3xl mb-4 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+      />
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {filteredProducts.map((product) => (
-          <CategoryCard key={product.id} product={product} />
-        ))}
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <CategoryCard key={product.id} product={product} />
+          ))
+        ) : (
+          <p className="text-center text-gray-500 col-span-full">
+            No products found.
+          </p>
+        )}
       </div>
     </div>
   );

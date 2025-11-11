@@ -73,7 +73,7 @@ const SignUpPage = () => {
             <input
               type="password"
               placeholder="Create a password"
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-blue-600 transition"
             />
           </div>
 
@@ -84,7 +84,7 @@ const SignUpPage = () => {
             <input
               type="password"
               placeholder="Confirm your password"
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-blue-600 transition"
             />
           </div>
 

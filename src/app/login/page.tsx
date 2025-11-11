@@ -49,7 +49,7 @@ const LoginPage = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-blue-600 transition"
             />
           </div>
 
@@ -60,7 +60,7 @@ const LoginPage = () => {
             <input
               type="password"
               placeholder="Enter your password"
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-blue-600 transition"
             />
           </div>
 
