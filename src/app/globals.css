@@ -21,6 +21,10 @@
   --dark-secondary-text: #f5f5f5;
   --dark-border: #d3d3d3;
   --dark-card: #41424c;
+
+  /* light text-main */
+  --grad-start: #da1a32;
+  --grad-end: #850302;
 }
 
 /*  Theme Mapping (The DEFAULT Mode) */
@@ -35,6 +39,10 @@
   --color-secondary: var(--light-secondary-text);
   --color-gray-line: var(--light-border);
   --color-bg-card: var(--light-card);
+
+  /* main text light */
+  --color-gradient-from: var(--grad-start);
+  --color-gradient-to: var(--grad-end);
 }
 
 /*  Full Page Logic & Dark Overrides */
@@ -47,9 +55,13 @@
     --color-secondary: var(--dark-secondary-text);
     --color-gray-line: var(--dark-border);
     --color-bg-card: var(--dark-card);
+
+    /* main text dark */
+    --grad-start: #ff4d6d;
+    --grad-end: #c9184a;
   }
 
-  /* 5. Apply to Full Page */
+  /*  Apply to Full Page */
   body {
     background-color: var(--color-app-bg);
     color: var(--color-primary);
@@ -57,5 +69,14 @@
     transition: background-color 0.2s ease, color 0.2s ease;
     min-height: 100vh;
     @apply antialiased;
+  }
+
+  .text-gradient-main {
+    background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    r: transparent;
   }
 }

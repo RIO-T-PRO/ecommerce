@@ -28,7 +28,7 @@ const Header = () => {
     <main className="w-full shadow sticky top-0 z-50 bg-bg-light border-b border-gray-line transition-colors duration-300">
       <div className="max-w-7xl px-6 lg:px-8 py-3">
         <nav className="flex justify-between items-center backdrop-blur-sm">
-          <span className="text-xl text-light-primary">Belle Mode</span>
+          <span className="text-xl text-gradient-main">Belle Mode</span>
 
           <div className="flex items-center space-x-6 text-light-primary font-medium">
             {navLinks.map((link) => (
