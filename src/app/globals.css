@@ -1,55 +1,61 @@
 @import "tailwindcss";
 
-/* Detection for the toggle when it will be clicked */
+/* 1. Detection for the toggle */
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --red-color: #c1121f;
 
-  /* Light mode */
-  --bg-light: #ffffff;
-  --bg-light-gray: #f5f5f5;
-  --light-primary: #0a0a0a;
-  --light-secondary: #262626;
-  --light-gray: #d4d4d4;
-  --light-bg-card: #fafaff;
+  /* Light hex codes */
+  --light-bg: #ffffff;
+  --light-bg-gray: #f5f5f5;
+  --light-primary-text: #0a0a0a;
+  --light-secondary-text: #262626;
+  --light-border: #d4d4d4;
+  --light-card: #fafaff;
 
-  /* Dark mode */
-  --bg-dark: #000000;
-  --bg-dark-gray: #0a0a0a;
-  --dark-primary: #fafafa;
-  --dark-secondary: #f5f5f5;
-  --dark-gray: #d3d3d3;
-  --dark-bg-card: #41424c;
+  /* Dark hex codes */
+  --dark-bg: #000000;
+  --dark-bg-gray: #0a0a0a;
+  --dark-primary-text: #fafafa;
+  --dark-secondary-text: #f5f5f5;
+  --dark-border: #d3d3d3;
+  --dark-card: #41424c;
 }
 
+/*  Theme Mapping (The DEFAULT Mode) */
 @theme {
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui;
-  --color-red: var(--red-color);
+  --color-red-main: var(--red-color);
 
-  /* Light */
-  --color-bg-light: var(--bg-light);
-  --color-bg-light-gray: var(--bg-light-gray);
-  --color-light-primary: var(--light-primary);
-  --color-light-secondary: var(--light-secondary);
-  --color-light-gray: var(--light-gray);
-  --color-light-bg-card: var(--light-bg-card);
+  /* Functional variables mapped to LIGHT by default */
+  --color-app-bg: var(--light-bg);
+  --color-app-bg-gray: var(--light-bg-gray);
+  --color-primary: var(--light-primary-text);
+  --color-secondary: var(--light-secondary-text);
+  --color-gray-line: var(--light-border);
+  --color-bg-card: var(--light-card);
 }
 
+/*  Full Page Logic & Dark Overrides */
 @layer base {
   .dark {
-    /* Dark */
-    --color-dark-bg: var(--bg-dark);
-    --color-dark-bg-gray: var(--bg-dark-gray);
-    --color-dark-primary: var(--dark-primary);
-    --color-dark-secondary: var(--dark-secondary);
-    --color-dark-gray: var(--dark-gray);
-    --color-dark-bg-card: var(--dark-bg-card);
+    /* Re-map the SAME functional variables to DARK hex codes */
+    --color-app-bg: var(--dark-bg);
+    --color-app-bg-gray: var(--dark-bg-gray);
+    --color-primary: var(--dark-primary-text);
+    --color-secondary: var(--dark-secondary-text);
+    --color-gray-line: var(--dark-border);
+    --color-bg-card: var(--dark-card);
   }
 
+  /* 5. Apply to Full Page */
   body {
     background-color: var(--color-app-bg);
-    color: var(--color-app-text);
+    color: var(--color-primary);
     font-family: var(--font-sans);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    min-height: 100vh;
+    @apply antialiased;
   }
 }
