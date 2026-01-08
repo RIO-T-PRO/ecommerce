@@ -36,8 +36,8 @@ export const CardFavorite = ({
       type="button"
       onClick={handlePress}
       className={cn(
-        "absolute top-3 right-3 p-2 rounded-full transition-all z-10",
-        "bg-primary/50 backdrop-blur-md border border-border-input hover:scale-110 shadow-sm",
+        "absolute top-3 right-3 p-1 rounded-full transition-all z-10",
+        "bg-secondary  border hover:scale-110 shadow-sm",
         active ? "text-red-main" : "text-foreground/40",
         className
       )}
