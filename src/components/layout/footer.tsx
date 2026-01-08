@@ -31,12 +31,14 @@ const Footer = () => {
     { icon: <Instagram size={20} />, href: "#", label: "Instagram" },
   ];
 
+  const year = new Date().getFullYear();
+
   return (
     <footer className="w-full bg-app-bg border-t border-gray-line/30 py-12 transition-colors duration-300">
       <div className="max-w-7xl  px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div className="lg:col-span-1 flex flex-col space-y-6">
           <div className="flex flex-col">
-            <span className="text-2xl font-bold text-gradient-main ">
+            <span className="md:text-3xl lg:text-4xl font-bold text-gradient-main ">
               Belle Mode
             </span>
             <p className="text-secondary text-sm/8 italic max-w-xs">
@@ -83,7 +85,7 @@ const Footer = () => {
 
       <div className="max-w-7x mx-auto  px-6 lg:px-8 mt-12 pt-8 border-t border-gray-line/30 text-center">
         <p className="text-sm/6 text-secondary/60">
-          © {new Date().getFullYear()} Belle Mode. All rights reserved.
+          © {year} Belle Mode. All rights reserved.
         </p>
       </div>
     </footer>

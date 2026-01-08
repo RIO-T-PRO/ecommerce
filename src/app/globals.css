@@ -11,7 +11,9 @@
   --light-bg-gray: #f5f5f5;
   --light-primary-text: #0a0a0a;
   --light-secondary-text: #262626;
+  --light-foreground: #d3d1ce;
   --light-border: #d4d4d4;
+  --border: #bddbbd;
   --light-card: #fafaff;
 
   /* Dark hex codes */
@@ -19,6 +21,8 @@
   --dark-bg-gray: #0a0a0a;
   --dark-primary-text: #fafafa;
   --dark-secondary-text: #f5f5f5;
+  --dark-foreground: #090f15;
+  --border: #f0f0f0;
   --dark-border: #d3d3d3;
   --dark-card: #41424c;
 
@@ -37,7 +41,9 @@
   --color-app-bg-gray: var(--light-bg-gray);
   --color-primary: var(--light-primary-text);
   --color-secondary: var(--light-secondary-text);
+  --color-foreground: var(--light-foreground);
   --color-gray-line: var(--light-border);
+  --color-border-input: var(--border);
   --color-bg-card: var(--light-card);
 
   /* main text light */
@@ -53,7 +59,9 @@
     --color-app-bg-gray: var(--dark-bg-gray);
     --color-primary: var(--dark-primary-text);
     --color-secondary: var(--dark-secondary-text);
+    --color-foreground: var(--dark-foreground);
     --color-gray-line: var(--dark-border);
+    --color-border-input: var(--dark-border);
     --color-bg-card: var(--dark-card);
 
     /* main text dark */
