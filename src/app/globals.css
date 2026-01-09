@@ -49,6 +49,57 @@
   /* main text light */
   --color-gradient-from: var(--grad-start);
   --color-gradient-to: var(--grad-end);
+
+  /* custom animation for hero section */
+  --animate-hero-zoom: zoom-down linear both;
+  --animate-content-reveal: content-reveal linear both;
+
+  @keyframes zoom-down {
+    0% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes content-reveal {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+@layer utilities {
+  /* Hides scrollbar for the horizontal slider */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scroll-zoom {
+    animation: var(--animate-hero-zoom);
+    animation-timeline: view(inline);
+    animation-range: cover 0% cover 100%;
+  }
+
+  .scroll-reveal {
+    animation: var(--animate-content-reveal);
+    animation-timeline: view(inline);
+    animation-range: cover 20% cover 80%;
+  }
 }
 
 /*  Full Page Logic & Dark Overrides */

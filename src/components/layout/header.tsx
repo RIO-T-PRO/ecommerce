@@ -34,9 +34,9 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-app-bg border-b border-gray-line/30 transition-colors duration-300">
+    <header className="w-full sticky top-0 z-50 bg-app-bg/80  backdrop-blur-sm border-b border-gray-line/30 transition-colors duration-300">
       <div className="max-w-7xl  px-6 lg:px-12 py-3">
-        <nav className="flex justify-between items-center backdrop-blur-sm">
+        <nav className="flex justify-between items-center ">
           <span className="md:text-xl lg:text-2xl text-gradient-main font-bold">
             Belle Mode
           </span>

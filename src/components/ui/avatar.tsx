@@ -8,9 +8,10 @@ const avatarVariants = cva(
   {
     variants: {
       size: {
-        sm: "h-8 w-8",
+        sm: "h-6 w-6",
         md: "h-10 w-10",
-        lg: "h-16 w-16",
+        lg: "h-14 w-14",
+        xl: "h-20 w-20",
       },
       shape: {
         circle: "rounded-full",
@@ -35,7 +36,7 @@ const Avatar = ({ className, size, shape, ...props }: AvatarProps) => (
 
 const AvatarImage = ({ className, src, alt, ...props }: ImageProps) => (
   <Image
-    src={src}
+    src={src || ""}
     alt={alt || "Avatar"}
     className={cn("aspect-square h-full w-full object-cover", className)}
     {...props}

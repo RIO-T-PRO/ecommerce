@@ -1,21 +1,11 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import HeroSection from "@/components/home/hero-section";
 
 const Home = () => {
   return (
-    <div className="py-12">
-      <div className="flex items-center gap-4 p-10">
-        {/* Standard Circular Avatar */}
-        <Avatar size="sm" shape="circle">
-          <AvatarImage src="" alt="User" />
-          <AvatarFallback>JD</AvatarFallback>
-        </Avatar>
-
-        {/* Square Stylized Avatar */}
-        <Avatar size="lg" shape="square">
-          <AvatarImage src="" alt="Item" />
-          <AvatarFallback>IT</AvatarFallback>
-        </Avatar>
-      </div>
+    <div className="min-h-screen bg-app-bg ">
+      <section className="w-full pb-12">
+        <HeroSection />
+      </section>
     </div>
   );
 };
