@@ -2,12 +2,7 @@
 
 import React, { useState } from "react";
 import { Heart } from "lucide-react";
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
-
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+import { cn } from "@/lib/utils";
 
 interface CardFavoriteProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onToggle"> {
@@ -15,7 +10,7 @@ interface CardFavoriteProps
   onToggle?: (state: boolean) => void;
 }
 
-export const CardFavorite = ({
+const CardFavorite = ({
   className,
   isFavorite = false, // temporary
   onToggle, // temporary
@@ -51,3 +46,5 @@ export const CardFavorite = ({
     </button>
   );
 };
+
+export default CardFavorite;

@@ -1,12 +1,7 @@
 import { cva, VariantProps } from "class-variance-authority";
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
-import React, { FC } from "react";
+import React from "react";
 import Image, { ImageProps } from "next/image";
-
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+import { cn } from "@/lib/utils";
 
 const cardVariants = cva("relative shadow-sm transition-all overflow-hidden", {
   variants: {
@@ -22,90 +17,90 @@ const cardVariants = cva("relative shadow-sm transition-all overflow-hidden", {
   },
 });
 
-export const Card = ({
+const Card = ({
   className,
   variant,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof cardVariants>) => (
-  <div className={cn(cardVariants({ variant }), className)} {...props}></div>
+  <div className={cn(cardVariants({ variant }), className)} {...props} />
 );
 
-export const CardHeader = ({
+const CardHeader = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn("flex flex-col space-y-1.5 p-6", className)}
-    {...props}
-  ></div>
+  <div className={cn("flex flex-col space-y-1.5 p-6", className)} {...props} />
 );
 
-export const CardTitle = ({
+const CardTitle = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLHeadElement>) => (
   <h3
     className={cn("text-xl text-primary font-semibold leading-none", className)}
     {...props}
-  ></h3>
+  />
 );
 
-export const CardDescription = ({
+const CardDescription = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLParagraphElement>) => (
-  <p className={cn("text-sm text-secondary leading-relaxed", className)}></p>
+  <p className={cn("text-sm text-secondary leading-relaxed", className)} />
 );
 
-export const CardContent = ({
+const CardContent = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn("p-6 pt-0", className)} {...props}></div>
+  <div className={cn("p-6 pt-0", className)} {...props} />
 );
 
-export const CardFooter = ({
+const CardFooter = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn("flex items-center p-6 pt-0 gap-2", className)}
     {...props}
-  ></div>
+  />
 );
 
-export const CardDivider = ({
+const CardDivider = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn("border-t h-0.5 border-gray-line my-4 w-full", className)}
     {...props}
-  ></div>
+  />
 );
 
-export const CardImage: FC<ImageProps> = ({
-  className,
-  src,
-  alt,
-  ...props
-}) => {
-  return (
-    <div
-      className={cn(
-        "relative w-full aspect-video overflow-hidden border-b border-border-input bg-secondary/50",
-        className
-      )}
-    >
-      <Image
-        src={src}
-        alt={alt || "Product Image"}
-        fill
-        className="object-cover transition-transform duration-500 group-hover:scale-105"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        {...props}
-      />
-    </div>
-  );
+const CardImage = ({ className, src, alt, ...props }: ImageProps) => (
+  <div
+    className={cn(
+      "relative w-full aspect-square overflow-hidden border border-gray-line",
+      className
+    )}
+  >
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className="object-cover transition-transform duration-500 hover:scale-110"
+      {...props}
+    />
+  </div>
+);
+
+export {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+  CardDivider,
+  CardImage,
 };
