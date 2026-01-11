@@ -35,7 +35,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[60vh] md:h-[70vh] bg-app-bg-gray border-b border-gray-line/40 overflow-hidden">
+    <section className="relative w-full h-[60vh] md:h-[70vh] bg-app-bg-gray border-b border-b-gray-line/40 overflow-hidden">
       <div
         ref={scrollContainerRef}
         className="flex h-full w-full overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth no-scrollbar"
